@@ -1,0 +1,6 @@
+{
+  "summary":  "Implementation plan for rate-limit-proof full-book PDF extraction in CliniDeck featuring adaptive inter-batch pacing, dual-model quota pool rotation (primary + fast lite), full-window cooldown waits that never skip pages, daily-quota detection, and 2 MB proxy-safe batch sizing.",
+  "updatedAt":  "2026-11-22T13:55:42.654522157Z",
+  "requestFeedback":  true,
+  "userFacing":  true
+}

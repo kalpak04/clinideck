@@ -1,0 +1,6 @@
+{
+  "name": "CliniDeck — NEET PG Study Workspace",
+  "description": "Upload NEET PG notes, rapid revision PDFs, or medical handouts to generate clinical vignette and exam one-liner flashcards, a searchable Q&A bank, and practice MCQs.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

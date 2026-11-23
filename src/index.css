@@ -1,0 +1,111 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #F8FAFC;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(224, 242, 254, 0.6) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(238, 242, 255, 0.5) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(240, 253, 250, 0.4) 0px, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+
+  .dark body {
+    background-color: #0B1120;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(14, 165, 233, 0.1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(15, 23, 42, 0.6) 0px, transparent 50%);
+    background-attachment: fixed;
+    letter-spacing: 0.01em;
+  }
+
+  /* Sleek custom scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.35);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(148, 163, 184, 0.6);
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: rgba(51, 65, 85, 0.5);
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(51, 65, 85, 0.8);
+  }
+}
+
+/* 3D Flashcard Flip Utilities (compositor-only transform & opacity) */
+.card-scene {
+  perspective: 1400px;
+}
+
+.card-flipper {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-flipper.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-face-back {
+  transform: rotateY(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-flipper {
+    transition: none;
+  }
+}
+
+/* Rapid Revision Print Sheet Styles */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .print-break-avoid {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+}

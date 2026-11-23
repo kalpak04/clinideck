@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CliniDeck — NEET PG Study Workspace</title>
+    <meta
+      name="description"
+      content="Upload NEET PG notes, rapid revision PDFs, or medical handouts to generate clinical vignette and exam one-liner flashcards, a searchable Q&A bank, and practice MCQs."
+    />
+    <meta property="og:title" content="CliniDeck — NEET PG Study Workspace" />
+    <meta
+      property="og:description"
+      content="Upload NEET PG notes, rapid revision PDFs, or medical handouts to generate clinical vignette and exam one-liner flashcards, a searchable Q&A bank, and practice MCQs."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=IBM+Plex+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('clinideck_theme');
+          if (saved === 'dark') {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body class="bg-[#F8FAFC] text-[#0F172A] dark:bg-[#0B1120] dark:text-[#F1F5F9] antialiased selection:bg-sky-200 selection:text-slate-900 dark:selection:bg-sky-900 dark:selection:text-sky-100">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
